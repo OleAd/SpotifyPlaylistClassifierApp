@@ -1,0 +1,28 @@
+<h1 class="text-center display-4">Thank you!</h1>
+
+<div class="mx-auto w-95 text-center">
+	<p class="text-center">
+	If you want to, we would like to hear what type of mood this playlist puts you in.
+	
+	<form action="/sentimentSubmit" method="post" id="sentimentForm">
+	<label for="sentiment">Type here:</label>
+	<input id="thisSentiment" type="text" name="sentiment_field" placeholder="Happy, sad, sleepy, angry, cozy...">
+	<input type="submit" value="Submit">
+	</form>
+	</p>
+	<br>
+	<p class="text-center">
+	If not, feel free to try another playlist.
+	</p>
+</div>
+<p class="text-center">
+<a href="/getPlaylists" class="btn btn-primary btn-lg">Try another playlist?</a>
+</p>
+<p class="text-center">
+<a href="/logout" class="btn btn-danger btn-lg">Log out</a>
+</p>
+<br>
+<br>
+<br>
+<br>
+<br>

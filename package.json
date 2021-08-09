@@ -1,0 +1,31 @@
+{
+  "name": "A_Day_in_the_Life",
+  "version": "1.0.0",
+  "description": "This app classifies playlists from Spotify",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Tests are not coded yet.\" && exit 1"
+  },
+  "author": "Ole Adrian Heggli @ Center for Music in the Brain",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/connect-datastore": "^4.0.0",
+    "@google-cloud/datastore": "^5.1.0",
+    "@google-cloud/storage": "^4.7.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dark-mode-switch": "^1.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.3",
+    "express-session": "^1.17.1",
+    "mongodb": "^3.5.7",
+    "querystring": "^0.2.0",
+    "request": "^2.88.2",
+    "serve-favicon": "^2.5.0",
+    "spotify-web-api-node": "^4.0.0",
+    "uuid": "^8.0.0"
+  },
+  "engines": {
+    "node": "14.x"
+  }
+}

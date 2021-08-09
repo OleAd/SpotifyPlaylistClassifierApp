@@ -1,0 +1,41 @@
+<h1 class="text-center display-4">Analysing, please wait...</h1>
+<div class="mx-auto w-95 text-center">
+	<p class="text-center">
+	We only analyse up to a maximum of 100 tracks in your playlist.
+	</p>
+
+</div>
+
+<div class="d-flex justify-content-center">
+	<div class="spinner-border m-5" role="status">
+	  <span class="sr-only">Analysing...</span>
+	</div>
+</div>
+<!-- Load TensorFlow.js -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"> </script>
+<script src="model.js"></script>
+
+
+
+
+
+<!-- Should write code here that takes the data from Handlebars and puts it into the model.js !-->
+
+<script>
+var playlistData = {{{data}}};
+var output = analysePlaylist(playlistData)
+.then(function(data) {
+	//console.log(data);
+	var probs = averagePrediction(data);
+	//console.log(probs);
+	var best = findIndicesOfMax(probs, 1);
+	var names = getClassNames(best);
+	//console.log(names);
+	window.location.href = ['/finishedAnalysis?best=' + best + '&time=' + names + '&prob0=' + probs[0] + '&prob1=' + probs[1] + '&prob2=' + probs[2] + '&prob3=' + probs[3] + '&prob4=' + probs[4]];
+	
+}, function(err) {
+	console.log('There should not be an error here:' + err);
+
+});
+
+</script>

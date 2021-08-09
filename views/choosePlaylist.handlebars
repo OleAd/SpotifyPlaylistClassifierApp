@@ -1,0 +1,44 @@
+<h1 class="text-center display-4">Choose playlist</h1>
+
+<div class="mx-auto w-95 text-center">
+	<p class="text-justify">
+	We only show up to the top 50 playlists in your Spotify account, and we shorten their name. Once you select a playlist, we will start analysing it, and give you the results. You can try as many playlists as you like.
+	</p>
+	<p class="text-justify">
+	Press the button below to select one of your playlist to analyse.
+	</p>
+</div>
+
+<div class="dropdown text-center">
+
+	<button class="btn btn-primary btn-lg dropdown-toggle text-center" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Select here:
+	<span class="caret">
+	</span>
+	</button>
+
+
+	<div class="dropdown-menu text-left scrollable-menu" id="dropdown">
+		<h2 class="dropdown-header">Your playlists:</h2>
+		{{#each data}}
+		<a class="dropdown-item" href=/analysePlaylist?id={{this}}>{{@key}}</a>
+		{{/each}}
+	</div>
+
+
+</div>
+
+<br>
+<p class="text-center">
+<a href="/logout" class="btn btn-danger btn-sm">Log out</a>
+</p>
+
+<!-- break for the old phones !-->
+<br>
+<br>
+<br>
+<br>
+
+
+
+

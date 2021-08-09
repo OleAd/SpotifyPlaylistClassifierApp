@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />  
+    <title>A Day in the Life</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="stylesheet" href="dark-mode.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<style>
+	canvas{
+		margin-right: 0;
+		margin-left: 0;
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+	body {
+		min-height=90vg;
+		padding-bottom:65px;
+		}
+	html {
+		margin-bottom:65px;
+		}
+	bg-custom {
+		background-color: #fff;
+		}
+	.scrollable-menu {
+		height: auto;
+		max-height: 300px;
+		overflow-x: hidden;
+	}
+	.wrap {
+	  font:12px Arial, san-serif;
+	}
+	form .likert {
+	  list-style:none;
+	  width:100%;
+	  margin:0;
+	  padding:0 0 10px;
+	  display:block;
+	  border-bottom:2px solid #efefef;
+	}
+	form .likert:last-of-type {border-bottom:0;}
+	form .likert:before {
+	  content: '';
+	  position:relative;
+	  top:10px;
+	  left:9.5%;
+	  display:block;
+	  background-color:#efefef;
+	  height:4px;
+	  width:78%;
+	}
+	form .likert li {
+	  display:inline-block;
+	  width:19%;
+	  text-align:center;
+	  vertical-align: top;
+	}
+	form .likert li input[type=radio] {
+	  display:block;
+	  position:relative;
+	  top:0;
+	  left:50%;
+	  margin-left:-3px;
+	  
+	}
+	form .likert li label {width:100%;}
+	form .buttons {
+	  margin:30px 0;
+	  padding:0 4.25%;
+	  text-align:right
+	} 
+	form .buttons button {
+	  padding: 5px 10px;
+	  background-color: #67ab49;
+	  border: 0;
+	  border-radius: 3px;
+	}
+
+	</style>
+  </head>
+  
+  
+  <body>
+  <div class="bg-white">
+	<div class="container-md bg-white">
+		<div class="center-block bg-white">
+		<h4 class="text-center">A Day in the Life</h4>
+		<hr/>
+		{{{body}}}
+		
+		<!-- testing changing this to a navbar bottom, nope, that did not work well !-->
+		
+		<div class="fixed-bottom bg-white">
+		<hr/>
+		<div class="bg-white">
+			
+			<p class="text-center">
+			<small class="text-muted">The 'A Day in the Life'-experiment. For questions contact <a href = "mailto: oleheggli+dayinlifequestions@gmail.com">Ole A. Heggli</a>.</small>
+			
+			<div class="custom-control custom-switch text-center">
+			  <input type="checkbox" class="custom-control-input" id="darkSwitch" />
+			  <label class="custom-control-label" for="darkSwitch"><small>Dark Mode</small></label>
+			</div>
+			</p>
+			
+		</div>
+		</div>
+	
+		
+	</div>
+	</div>
+	
+	
+	<script src="dark-mode-switch.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

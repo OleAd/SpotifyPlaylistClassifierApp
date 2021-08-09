@@ -1,0 +1,169 @@
+<h1 class="text-center display-4">When do you listen to what?</h1>
+<br>
+<div class="mx-auto w-95 text-center">
+	<p class="text-justify">
+	Which type of music do you listen to at different times during the day?
+	At the Center for Music in the Brain we've analysed billions of tracks and found that musical features such as the tempo and danceability change during the day. Now we want to figure out why, and you can help us!
+	</p>
+	<p class="text-justify">
+	In this experiment we'll look at your Spotify playlists, and categorize them into one of these five times of the day:
+	</p>
+</div>
+
+
+<!-- <div class="mx-auto w-75"> !-->
+
+<div class="row">
+<div class="col-3">
+	<img src="images/morning.png" class="img-fluid fit-image">
+</div>
+<div class="col-9 align-self-center">
+	<p class="text-left">
+	<strong>Morning:</strong> From 05:00 to 11:00 (5:00 a.m. to 11:00 a.m.)
+	</p>
+</div>
+</div>
+<br>
+<div class="row">
+<div class="col-3">
+	<img src="images/afternoon.png" class="img-fluid fit-image">
+</div>
+<div class="col-9 align-self-center">
+	<p class="text-left align-middle">
+	<strong>Afternoon:</strong> From 11:00 to 19:00 (11:00 a.m. to 7:00 p.m.)
+	</p>
+</div>
+</div>	
+<br>
+<div class="row">
+<div class="col-3">
+	<img src="images/evening.png" class="img-fluid fit-image">
+</div>
+<div class="col-9 align-self-center">
+	<p class="text-left">
+	<strong>Evening:</strong> From 19:00 to 23:00 (7:00 p.m. to 11:00 p.m.)
+	</p>
+</div>
+</div>
+<br>
+
+<div class="row">
+<div class="col-3">
+	<img src="images/night.png" class="img-fluid fit-image">
+</div>
+<div class="col-9 align-self-center">
+	<p class="text-left">
+	<strong>Night:</strong> From 23:00 to 03:00 (11:00 p.m. to 3:00 a.m.)
+	</p>
+</div>
+</div>
+<br>
+
+<div class="row">
+<div class="col-3">
+	<img src="images/earlymorning.png" class="img-fluid fit-image">
+</div>
+<div class="col-9 align-self-center">
+	<p class="text-left">
+	<strong>Early morning/late night:</strong> From 03:00 to 05:00 (3:00 a.m. to 5:00 a.m.)
+	</p>
+</div>
+</div>
+<br>
+<br>
+<div class="mx-auto w-95 text-center">
+	<p class="text-justify">
+	To participate you log in through Spotify. We ask permission to view your playlists so you can choose which of your playlists to analyse. Once it has been analysed we will let you know which time of the day we think it belongs to, and whether you agree.
+	</p>
+	<p class="text-justify">
+	We collect only anonymised data, such as the name of the tracks in your playlists. If you participate you agree to let us use the data for research purposes. For more information press <a href = "#infoModal" data-toggle="modal" data-target="#infoModal">here.</a>
+	</p>
+</div>
+
+<p class="text-center">
+<strong>To continue, press this button:</strong>
+</p>
+
+
+<!-- PUT MODAL HERE !-->
+
+<!-- Modal -->
+<div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content bg-white">
+      <div class="modal-header">
+        <h5 class="modal-title" id="infoModal">Information</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <p class="text-left">
+		  <strong>What is the purpose of the experiment?</strong>
+		  </p>
+		  <p class="text-left">
+		  Throughout the day people listen to different types of music. We want to understand what drives this cyclic change.
+		  </p>
+		  <p class="text-left">
+		  <strong>Who is running this experiment?</strong>
+		  </p>
+		  <p class="text-left">
+		  This experiment is run by the Center for Music in the Brain at Aarhus University, Denmark. The researchers working on this project are Ole Adrian Heggli, Jan Stupacher, and Peter Vuust.
+		  </p>
+		   <p class="text-left">
+		  <strong>What do we collect?</strong>
+		  </p>
+		  <p class="text-left">
+		  We collect the Spotify ID of your playlist and the tracks in your playlist, your response to whether you agree with our classification or not, and any free text you input in a question about your mood when listening to a playlist. In addition we assign you a unique identifier that is kept the same for your visit. We do not collect any form of personally identifiable information. Logging in is handled through Spotify's webpages, and we never gain access to your password.
+		  </p>
+		  <p class="text-left">
+		  <strong>Cookie compliance.</strong>
+		  </p>
+		  <p class="text-left">
+		  We only store an authorization code received from Spotify, that will allow you to select different playlists multiple times. This is a "strictly necessary cookie", meaning it complies with the GDPR ePrivacy Directive.
+		  </p>
+		  <p class="text-left">
+		  <strong>What will you do with the data?</strong>
+		  </p>
+		  <p class="text-left">
+		  We will use the data we collect for research purposes, such as using it for analyses to be reported in scientific publications, and making it public for other researchers to use.
+		  </p>
+		  <p class="text-left">
+		  <strong>How does it work?</strong>
+		  </p>
+		  <p class="text-left">
+		  We have used a large dataset of listening behaviour from Spotify to identify times of the day when people listen to distinct types of music, as defined by the auditory features of the music. These auditory features are used to train a neural network that classifies which time of the day a track is most likely to belong to. When you use our app, we take auditory features from the tracks in your playlist and use the neural network to classify your playlists. We use Tensorflow for the neural network, and the Spotify API for getting auditory features of the music.
+		  </p>
+		  <p class="text-left">
+		  <strong>Where did you get the illustrations?</strong>
+		  </p>
+		  <p class="text-left">
+		  We adapted illustrations by Américo Almeida on pixabay.com.
+		  </p>
+		  <p class="text-left">
+		  <strong>Who do I contact if I have any questions?</strong>
+		  </p>
+		  <p class="text-left">
+		  For any questions contact <a href = "mailto: oleheggli+dayinlifequestions@gmail.com">Ole Adrian Heggli</a>.
+		  </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<p class="text-center">
+<a href="/login" class="btn btn-primary btn-lg">Log in through Spotify</a>
+</p>
+
+<!-- break for the old phones !-->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

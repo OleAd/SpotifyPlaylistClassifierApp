@@ -1,0 +1,203 @@
+<div class="mx-auto w-100 text-center">
+	<p class="text-center">
+	We think people would listen to this playlist in the: 
+	</p>
+	<p class="text-center display-4">
+	{{{name}}}.
+	</p>
+</div>
+<div class="mx-auto w-25">
+	<img src="images/blank.png" class="img-fluid rounded" id="analysisImage">
+</div>
+<br>
+
+<div class="mx-auto w-95 text-center">
+<p class="text-center" id="analysisText">
+</p>
+
+<!-- Some script to set the text here !-->
+
+<script>
+const morningText = "The morning (from 05:00 to 11:00) is characterized by songs with a medium tempo, yet with high energy ratings.";
+const afternoonText = "The afternoon (from 11:00 to 19:00) is characterized by louder songs with a higher tempo and energy than the rest of the day.";
+const eveningText = "The evening (from 19:00 to 23:00) is characterized by loud and danceable songs with a clear and mechanical beat.";
+const nightText = "The night (from 23:00 to 03:00) is characterized by a mix of songs, some with a slower tempo and lower energy rating, and some with a higher tempo and higher energy rating.";
+const lateNightText = "The early morning/late night (from 03:00 to 05:00) is characterized by soft and organic songs with a low tempo.";
+
+var thisSelection = "{{{name}}}";
+console.log(thisSelection)
+
+if (thisSelection == "Morning") {
+	thisText = morningText;
+	thisImage = "images/morning.png";
+} else if (thisSelection == "Afternoon") {
+	thisText = afternoonText;
+	thisImage = "images/afternoon.png";
+} else if (thisSelection == "Evening") {
+	thisText = eveningText;
+	thisImage = "images/evening.png";
+} else if (thisSelection == "Night") {
+	thisText = nightText;
+	thisImage = "images/night.png";
+} else if (thisSelection == "Early Morning/Late Night") {
+	thisText = lateNightText;
+	thisImage = "images/earlymorning.png";
+}
+
+document.getElementById("analysisText").innerHTML = thisText;
+document.getElementById("analysisImage").src=thisImage;
+
+</script>
+
+<div class="mx-auto w-95 text-center">
+<p class="text-center">
+<a href = "#resultsModal" data-toggle="modal" data-target="#resultsModal">For a graph of analysis results, press here.</a>
+</p>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+<div class="mx-auto w-100">
+<h3 class="text-center display-4">Do you agree?</h3>
+<p class="text-center">
+<a href="/questionResponse?response=Yes" class="btn btn-success btn-lg">Yes</a>
+<a href="/questionResponse?response=No" class="btn btn-danger btn-lg">No</a>
+</p>
+<!-- break for the old phones !-->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+</div>
+
+</div>
+
+
+
+<!-- putting modal here !-->
+<!-- Modal -->
+<div class="modal fade" id="resultsModal" tabindex="-1" role="dialog" aria-labelledby="resultsModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content bg-white">
+      <div class="modal-header">
+        <h5 class="modal-title" id="resultsModal">Analysis details:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  <p class="text-left">
+		  <strong>Classification results:</strong>
+		  </p>
+		  <p class="text-left">
+		  This graph shows the probability of your playlist belonging to one of the five times of the day. We select the one with the highest probability.
+		  </p>
+		  
+		  <!-- chart goes here !-->
+		  <canvas id="probChartModal" class="img-responsive">
+		  </canvas>
+		  <br>
+		  <p class="text-left">
+		  <strong>Who do I contact if I have any questions?</strong>
+		  </p>
+		  <p class="text-left">
+		  For any questions contact <a href = "mailto: oleheggli+dayinlifequestions@gmail.com">Ole Adrian Heggli</a>.
+		  </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- labels: ['Early morning/late night', 'Morning', 'Afternoon', 'Evening', 'Night'], !-->
+<script>
+
+// check if mobile
+function isMobileDevice(){
+    return ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+}
+
+const mobileLabels = ['03-05', '05-11', '11-19', '19-23', '23-03'];
+const bigLabels = ['Early morning/Late night', 'Morning', 'Afternoon', 'Evening', 'Night'];
+var useLabels = [];
+
+if (isMobileDevice()==true){
+	useLabels = mobileLabels;
+	console.log('Is mobile');
+} else {
+	useLabels = bigLabels;
+	console.log('Is not mobile');
+	}
+
+
+var ctx = document.getElementById('probChartModal').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'bar',
+
+    // The data for our dataset
+    data: {
+        labels: useLabels,
+        datasets: [{
+            label: 'Probability',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(179, 179, 204)',
+            data: [{{prob0}}*100, {{prob1}}*100, {{prob2}}*100, {{prob3}}*100, {{prob4}}*100]
+        }]
+    },
+
+    // Configuration options go here
+    options: {
+		scales: {
+			yAxes: [{
+				scaleLabel: {
+				display: true,
+				labelString: 'Probability'
+				}
+			}],
+			xAxes: [{
+				scaleLabel: {
+				display: true,
+				labelString: 'Time of the day'
+				}
+			}]
+				
+		
+		},
+		legend: {
+		display: false
+		},
+		maintainAspectRatio: true,
+		layout: {
+			padding: {
+			left:0,
+			right:0,
+			top:0,
+			bottom:0
+			}
+		},
+		responsive: true
+	}
+});
+
+
+
+</script>
